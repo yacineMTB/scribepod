@@ -1,0 +1,265 @@
+\begin{thebibliography}{38}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Anil et~al.(2022)Anil, Wu, Andreassen, Lewkowycz, Misra, Ramasesh,
+  Slone, Gur-Ari, Dyer, and Neyshabur}]{anil2022exploring}
+Cem Anil, Yuhuai Wu, Anders Andreassen, Aitor Lewkowycz, Vedant Misra, Vinay
+  Ramasesh, Ambrose Slone, Guy Gur-Ari, Ethan Dyer, and Behnam Neyshabur. 2022.
+\newblock Exploring length generalization in large language models.
+\newblock \emph{arXiv preprint arXiv:2207.04901}.
+
+\bibitem[{Betz et~al.(2020)Betz, Voigt, and Richardson}]{betz2020critical}
+Gregor Betz, Christian Voigt, and Kyle Richardson. 2020.
+\newblock Critical thinking for language models.
+\newblock \emph{arXiv preprint arXiv:2009.07185}.
+
+\bibitem[{Bowman et~al.(2015)Bowman, Angeli, Potts, and
+  Manning}]{bowman2015large}
+Samuel~R Bowman, Gabor Angeli, Christopher Potts, and Christopher~D Manning.
+  2015.
+\newblock A large annotated corpus for learning natural language inference.
+\newblock \emph{arXiv preprint arXiv:1508.05326}.
+
+\bibitem[{Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal,
+  Neelakantan, Shyam, Sastry, Askell et~al.}]{brown2020language}
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared~D Kaplan, Prafulla
+  Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell,
+  et~al. 2020.
+\newblock Language models are few-shot learners.
+\newblock \emph{Advances in neural information processing systems},
+  33:1877--1901.
+
+\bibitem[{Chowdhery et~al.(2022)Chowdhery, Narang, Devlin, Bosma, Mishra,
+  Roberts, Barham, Chung, Sutton, Gehrmann et~al.}]{chowdhery2022palm}
+Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra,
+  Adam Roberts, Paul Barham, Hyung~Won Chung, Charles Sutton, Sebastian
+  Gehrmann, et~al. 2022.
+\newblock Palm: Scaling language modeling with pathways.
+\newblock \emph{arXiv preprint arXiv:2204.02311}.
+
+\bibitem[{Clark et~al.(2020)Clark, Tafjord, and
+  Richardson}]{clark2020transformers}
+Peter Clark, Oyvind Tafjord, and Kyle Richardson. 2020.
+\newblock Transformers as soft reasoners over language.
+\newblock \emph{arXiv preprint arXiv:2002.05867}.
+
+\bibitem[{Cobbe et~al.(2021)Cobbe, Kosaraju, Bavarian, Hilton, Nakano, Hesse,
+  and Schulman}]{cobbe2021training}
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Jacob Hilton, Reiichiro Nakano,
+  Christopher Hesse, and John Schulman. 2021.
+\newblock Training verifiers to solve math word problems.
+\newblock \emph{arXiv preprint arXiv:2110.14168}.
+
+\bibitem[{Creswell and Shanahan(2022)}]{creswell2022faithful}
+Antonia Creswell and Murray Shanahan. 2022.
+\newblock Faithful reasoning using large language models.
+\newblock \emph{arXiv preprint arXiv:2208.14271}.
+
+\bibitem[{Creswell et~al.(2022)Creswell, Shanahan, and
+  Higgins}]{creswell2022selection}
+Antonia Creswell, Murray Shanahan, and Irina Higgins. 2022.
+\newblock Selection-inference: Exploiting large language models for
+  interpretable logical reasoning.
+\newblock \emph{arXiv preprint arXiv:2205.09712}.
+
+\bibitem[{Dagan et~al.(2013)Dagan, Roth, Sammons, and
+  Zanzotto}]{dagan2013recognizing}
+Ido Dagan, Dan Roth, Mark Sammons, and Fabio~Massimo Zanzotto. 2013.
+\newblock Recognizing textual entailment: Models and applications.
+\newblock \emph{Synthesis Lectures on Human Language Technologies},
+  6(4):1--220.
+
+\bibitem[{Dalvi et~al.(2021)Dalvi, Jansen, Tafjord, Xie, Smith, Pipatanangkura,
+  and Clark}]{dalvi2021explaining}
+Bhavana Dalvi, Peter Jansen, Oyvind Tafjord, Zhengnan Xie, Hannah Smith,
+  Leighanna Pipatanangkura, and Peter Clark. 2021.
+\newblock Explaining answers with entailment trees.
+\newblock \emph{arXiv preprint arXiv:2104.08661}.
+
+\bibitem[{Garcez and Lamb(2020)}]{garcez2020neurosymbolic}
+Artur~d'Avila Garcez and Luis~C Lamb. 2020.
+\newblock Neurosymbolic ai: the 3rd wave.
+\newblock \emph{arXiv preprint arXiv:2012.05876}.
+
+\bibitem[{Han et~al.(2022)Han, Schoelkopf, Zhao, Qi, Riddell, Benson, Sun,
+  Zubova, Qiao, Burtell et~al.}]{han2022folio}
+Simeng Han, Hailey Schoelkopf, Yilun Zhao, Zhenting Qi, Martin Riddell, Luke
+  Benson, Lucy Sun, Ekaterina Zubova, Yujie Qiao, Matthew Burtell, et~al. 2022.
+\newblock Folio: Natural language reasoning with first-order logic.
+\newblock \emph{arXiv preprint arXiv:2209.00840}.
+
+\bibitem[{Hendrycks et~al.(2021)Hendrycks, Burns, Kadavath, Arora, Basart,
+  Tang, Song, and Steinhardt}]{hendrycks2021measuring}
+Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul Arora, Steven Basart, Eric
+  Tang, Dawn Song, and Jacob Steinhardt. 2021.
+\newblock Measuring mathematical problem solving with the math dataset.
+\newblock \emph{arXiv preprint arXiv:2103.03874}.
+
+\bibitem[{Hewitt(1969)}]{hewitt1969planner}
+Carl Hewitt. 1969.
+\newblock Planner: A language for proving theorems in robots.
+\newblock In \emph{Proceedings of the 1st International Joint Conference on
+  Artificial Intelligence}, IJCAI'69, page 295–301, San Francisco, CA, USA.
+  Morgan Kaufmann Publishers Inc.
+
+\bibitem[{Jhamtani and Clark(2020)}]{jhamtani2020learning}
+Harsh Jhamtani and Peter Clark. 2020.
+\newblock Learning to explain: Datasets and models for identifying valid
+  reasoning chains in multihop question-answering.
+\newblock \emph{arXiv preprint arXiv:2010.03274}.
+
+\bibitem[{Kassner et~al.(2020)Kassner, Krojer, and
+  Sch{\"u}tze}]{kassner2020pretrained}
+Nora Kassner, Benno Krojer, and Hinrich Sch{\"u}tze. 2020.
+\newblock Are pretrained language models symbolic reasoners over knowledge?
+\newblock \emph{arXiv preprint arXiv:2006.10413}.
+
+\bibitem[{Khot et~al.(2022)Khot, Trivedi, Finlayson, Fu, Richardson, Clark, and
+  Sabharwal}]{khot2022decomposed}
+Tushar Khot, Harsh Trivedi, Matthew Finlayson, Yao Fu, Kyle Richardson, Peter
+  Clark, and Ashish Sabharwal. 2022.
+\newblock Decomposed prompting: A modular approach for solving complex tasks.
+\newblock \emph{arXiv preprint arXiv:2210.02406}.
+
+\bibitem[{Liu et~al.(2022)Liu, Ash, Goel, Krishnamurthy, and
+  Zhang}]{liu2022transformers}
+Bingbin Liu, Jordan~T Ash, Surbhi Goel, Akshay Krishnamurthy, and Cyril Zhang.
+  2022.
+\newblock Transformers learn shortcuts to automata.
+\newblock \emph{arXiv preprint arXiv:2210.10749}.
+
+\bibitem[{Marcus(2020)}]{marcus2020next}
+Gary Marcus. 2020.
+\newblock The next decade in ai: four steps towards robust artificial
+  intelligence.
+\newblock \emph{arXiv preprint arXiv:2002.06177}.
+
+\bibitem[{McCarthy et~al.(1960)}]{mccarthy1960programs}
+John McCarthy et~al. 1960.
+\newblock \emph{Programs with common sense}.
+\newblock RLE and MIT computation center Cambridge, MA, USA.
+
+\bibitem[{Nye et~al.(2022)Nye, Andreassen, Gur-Ari, Michalewski, Austin,
+  Bieber, Dohan, Lewkowycz, Bosma, Luan, Sutton, and Odena}]{nye2022show}
+Maxwell Nye, Anders~Johan Andreassen, Guy Gur-Ari, Henryk Michalewski, Jacob
+  Austin, David Bieber, David Dohan, Aitor Lewkowycz, Maarten Bosma, David
+  Luan, Charles Sutton, and Augustus Odena. 2022.
+\newblock \href {https://openreview.net/forum?id=HBlx2idbkbq} {Show your work:
+  Scratchpads for intermediate computation with language models}.
+\newblock In \emph{Deep Learning for Code Workshop}.
+
+\bibitem[{Poole and Mackworth(2010)}]{poole2010artificial}
+David~L Poole and Alan~K Mackworth. 2010.
+\newblock \emph{Artificial Intelligence: foundations of computational agents}.
+\newblock Cambridge University Press.
+
+\bibitem[{Rae et~al.(2021)Rae, Borgeaud, Cai, Millican, Hoffmann, Song,
+  Aslanides, Henderson, Ring, Young et~al.}]{rae2021scaling}
+Jack~W Rae, Sebastian Borgeaud, Trevor Cai, Katie Millican, Jordan Hoffmann,
+  Francis Song, John Aslanides, Sarah Henderson, Roman Ring, Susannah Young,
+  et~al. 2021.
+\newblock Scaling language models: Methods, analysis \& insights from training
+  gopher.
+\newblock \emph{arXiv preprint arXiv:2112.11446}.
+
+\bibitem[{Saeed et~al.(2021)Saeed, Ahmadi, Nakov, and
+  Papotti}]{saeed2021rulebert}
+Mohammed Saeed, Naser Ahmadi, Preslav Nakov, and Paolo Papotti. 2021.
+\newblock Rulebert: Teaching soft rules to pre-trained language models.
+\newblock \emph{arXiv preprint arXiv:2109.13006}.
+
+\bibitem[{Saparov and He(2022)}]{saparov2022language}
+Abulhair Saparov and He~He. 2022.
+\newblock Language models are greedy reasoners: A systematic formal analysis of
+  chain-of-thought.
+\newblock \emph{arXiv preprint arXiv:2210.01240}.
+
+\bibitem[{Schlegel et~al.(2022)Schlegel, Pavlov, and
+  Pratt-Hartmann}]{schlegel2022can}
+Viktor Schlegel, Kamen~V Pavlov, and Ian Pratt-Hartmann. 2022.
+\newblock Can transformers reason in fragments of natural language?
+\newblock \emph{arXiv preprint arXiv:2211.05417}.
+
+\bibitem[{Shen et~al.(2021)Shen, Yin, Li, Shang, Jiang, Zhang, and
+  Liu}]{shen2021generate}
+Jianhao Shen, Yichun Yin, Lin Li, Lifeng Shang, Xin Jiang, Ming Zhang, and Qun
+  Liu. 2021.
+\newblock Generate \& rank: A multi-task framework for math word problems.
+\newblock \emph{arXiv preprint arXiv:2109.03034}.
+
+\bibitem[{Sprague et~al.(2022)Sprague, Bostrom, Chaudhuri, and
+  Durrett}]{sprague2022natural}
+Zayne Sprague, Kaj Bostrom, Swarat Chaudhuri, and Greg Durrett. 2022.
+\newblock Natural language deduction with incomplete information.
+\newblock \emph{arXiv preprint arXiv:2211.00614}.
+
+\bibitem[{Suzgun et~al.(2022)Suzgun, Scales, Sch{\"a}rli, Gehrmann, Tay, Chung,
+  Chowdhery, Le, Chi, Zhou et~al.}]{suzgun2022challenging}
+Mirac Suzgun, Nathan Scales, Nathanael Sch{\"a}rli, Sebastian Gehrmann, Yi~Tay,
+  Hyung~Won Chung, Aakanksha Chowdhery, Quoc~V Le, Ed~H Chi, Denny Zhou, et~al.
+  2022.
+\newblock Challenging big-bench tasks and whether chain-of-thought can solve
+  them.
+\newblock \emph{arXiv preprint arXiv:2210.09261}.
+
+\bibitem[{Tafjord et~al.(2020)Tafjord, Mishra, and
+  Clark}]{tafjord2020proofwriter}
+Oyvind Tafjord, Bhavana~Dalvi Mishra, and Peter Clark. 2020.
+\newblock Proofwriter: Generating implications, proofs, and abductive
+  statements over natural language.
+\newblock \emph{arXiv preprint arXiv:2012.13048}.
+
+\bibitem[{Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Chi, Le, and
+  Zhou}]{wei2022chain}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed~Chi, Quoc Le, and
+  Denny Zhou. 2022.
+\newblock Chain of thought prompting elicits reasoning in large language
+  models.
+\newblock \emph{arXiv preprint arXiv:2201.11903}.
+
+\bibitem[{Williams et~al.(2018)Williams, Nangia, and Bowman}]{N18-1101}
+Adina Williams, Nikita Nangia, and Samuel Bowman. 2018.
+\newblock \href {http://aclweb.org/anthology/N18-1101} {A broad-coverage
+  challenge corpus for sentence understanding through inference}.
+\newblock In \emph{the North American Chapter of the Association for
+  Computational Linguistics: Human Language Technologies, Volume 1 (Long
+  Papers)}, pages 1112--1122. Association for Computational Linguistics.
+
+\bibitem[{Zelikman et~al.(2022)Zelikman, Mu, Goodman, and
+  Wu}]{zelikman2022star}
+Eric Zelikman, Jesse Mu, Noah~D Goodman, and Yuhuai~Tony Wu. 2022.
+\newblock Star: Self-taught reasoner bootstrapping reasoning with reasoning.
+
+\bibitem[{Zhang et~al.(2022{\natexlab{a}})Zhang, Li, Huang, Naik, and
+  Xing}]{zhang2022improved}
+Hanlin Zhang, Ziyang Li, Jiani Huang, Mayur Naik, and Eric Xing.
+  2022{\natexlab{a}}.
+\newblock Improved logical reasoning of language models via differentiable
+  symbolic programming.
+\newblock In \emph{First Workshop on Pre-training: Perspectives, Pitfalls, and
+  Paths Forward at ICML 2022}.
+
+\bibitem[{Zhang et~al.(2022{\natexlab{b}})Zhang, Li, Meng, Chang, and
+  Broeck}]{zhang2022paradox}
+Honghua Zhang, Liunian~Harold Li, Tao Meng, Kai-Wei Chang, and Guy Van~den
+  Broeck. 2022{\natexlab{b}}.
+\newblock On the paradox of learning to reason from data.
+\newblock \emph{arXiv preprint arXiv:2205.11502}.
+
+\bibitem[{Zhou et~al.(2022{\natexlab{a}})Zhou, Sch{\"a}rli, Hou, Wei, Scales,
+  Wang, Schuurmans, Bousquet, Le, and Chi}]{zhou2022least}
+Denny Zhou, Nathanael Sch{\"a}rli, Le~Hou, Jason Wei, Nathan Scales, Xuezhi
+  Wang, Dale Schuurmans, Olivier Bousquet, Quoc Le, and Ed~Chi.
+  2022{\natexlab{a}}.
+\newblock Least-to-most prompting enables complex reasoning in large language
+  models.
+\newblock \emph{arXiv preprint arXiv:2205.10625}.
+
+\bibitem[{Zhou et~al.(2022{\natexlab{b}})Zhou, Nova, Larochelle, Courville,
+  Neyshabur, and Sedghi}]{zhou2022teaching}
+Hattie Zhou, Azade Nova, Hugo Larochelle, Aaron Courville, Behnam Neyshabur,
+  and Hanie Sedghi. 2022{\natexlab{b}}.
+\newblock Teaching algorithmic reasoning via in-context learning.
+\newblock \emph{arXiv preprint arXiv:2211.09066}.
+
+\end{thebibliography}

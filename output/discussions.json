@@ -1,0 +1,20 @@
+{
+  "LAMBADA: Backward Chaining for Automated Reasoning in Natural Language": [
+    "Alice: Hey Bob, have you had a chance to read that paper on automated reasoning in natural language that I sent you?",
+    "Bob: Yes, I did. It's called LAMBADA, right?",
+    "Alice: That's right. I thought it was really interesting.",
+    "Bob: Me too. I especially liked the part about backward chaining. Can you explain more about that?",
+    "Alice: Sure. So basically, backward chaining is a strategy for reasoning that starts with a goal and breaks it down into smaller sub-goals based on rules that apply to it. It continues to decompose the sub-goals until they can be either proved or disproved based on the facts, or until there are no more rules that can be applied.",
+    "Bob: I see. And how does LAMBADA implement backward chaining?",
+    "Alice: LAMBADA uses four natural language processing modules: Fact Check, Rule Selection, Goal Decomposition, and Sign Agreement. The Fact Check module verifies whether a goal can be proved or disproved based on the facts, while the Rule Selection module selects the rules that can be applied to the goal based on unification in logic. The Goal Decomposition module breaks down the goal into sub-goals based on the selected rules, and the Sign Agreement module checks that the signs of the sub-goals match the sign of the original goal.",
+    "Bob: That's really interesting. What did the results of the LAMBADA model look like compared to the other baselines?",
+    "Alice: The LAMBADA model outperformed the other two baselines, especially on the ProofWriter-PUD dataset and at higher depths of the PrOntoQA dataset. It's backward chaining method was also more effective than the forward chaining used in the SI model.",
+    "Bob: That's impressive. What were some of the main sources of error for the CoT model?",
+    "Alice: The main source of error for CoT was hallucinating rules or facts, followed by not understanding conjunction and making invalid derivations. There were also some spurious correlations in the ProofWriter-PD dataset that may have contributed to CoT's high accuracy on that dataset.",
+    "Bob: Hmm, that's something to be aware of. So it sounds like LAMBADA is a pretty robust model.",
+    "Alice: Yeah, it looks like it is. And it's not too sensitive to lexical changes either, as it performed well on a modified version of the ProofWriter dataset with different entity and animal names.",
+    "Bob: That's really impressive. Do you think LAMBADA has any limitations or areas for improvement?",
+    "Alice: One potential limitation is that LAMBADA currently only does exact matches for cycle matching, which is a technique it uses to avoid repeating searches. It might be worth exploring other types of matching as well. Additionally, it might be interesting to see how LAMBDA performs on larger or more complex datasets.",
+    "Bob: Yeah, those are definitely areas to consider for future work. Thanks for explaining all of this to me, Alice. I have a much better understanding of the paper now."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "scribepod",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npx tsx ./processPaper.ts "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yacineMTB/AgentGraph.git"
+  },
+  "author": "",
+  "license": "MIT. But also, do not use this code to use the GPT API in any manner that you wouldn't otherwise do manually.",
+  "bugs": {
+    "url": "https://github.com/yacineMTB/AgentGraph/issues"
+  },
+  "homepage": "https://github.com/yacineMTB/AgentGraph#readme",
+  "dependencies": {
+    "got": "^12.5.3",
+    "typescript": "^4.9.3",
+    "zx": "^7.1.1"
+  }
+}
