@@ -1,3 +1,5 @@
+![generated with stable diffusion](https://github.com/yacineMTB/scribepod/blob/master/upscaledrobot.png?raw=true)
+
 ## What is this?
 What this does:
 - Pages through a paper, and creates a series of facts using GPT
