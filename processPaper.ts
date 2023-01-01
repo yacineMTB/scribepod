@@ -24,6 +24,7 @@ interface ArxivData {
 const FOLDER_PATH = './papers';
 // However you're getting to GPT
 // You could use the openAI API, I have a webserver running on my machine that I use to talk to GPT
+// Just didn't have time to swap it out
 const PROMPT_URL = 'http://localhost:3000/conversation'; 
 const SUMMARIZE_PROMPT = `Turn facts from the following section as a bullet list, retaining the specific details`
 const PODCAST_PROMPT = `
