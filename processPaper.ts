@@ -28,7 +28,7 @@ const FOLDER_PATH = './papers';
 const PROMPT_URL = 'http://localhost:3000/conversation'; 
 const SUMMARIZE_PROMPT = `Turn facts from the following section as a bullet list, retaining the specific details`
 const PODCAST_PROMPT = `
-  Could simulate simulate a podcast conversation between "Alice" and "Bob" having a very engaging converstaion about a research paper? The conversation should be intelligent, elaborative, with each speaker asking questions and makign comments.
+  Could simulate a podcast conversation between "Alice" and "Bob" having a very engaging converstaion about a research paper? The conversation should be intelligent, elaborative, with each speaker asking questions and making comments.
   Some things I'd like to ask:
   - Use "Alice:" and "Bob:" to indicate who is speaking. 
   - Make dialogue as long as possible. I want the dialogue to be 4000 words
