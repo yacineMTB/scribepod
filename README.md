@@ -1,20 +1,25 @@
 ![generated with stable diffusion](https://github.com/yacineMTB/scribepod/blob/master/upscaledrobot.png?raw=true)
 
-## What is this?
-What this does:
-- Pages through a paper, and creates a series of facts using GPT
-- Takes all of those facts, and requests a dialogue to be created about it
+# Scribepod - Podcast Generator
+These are my scripts that
+- Page through papers (`./paper/<paper_name>/*.tex`) & websites (`./websites/<webpage_name>.*html`) 
+  - You can add your own files under those subdirectories!
+- Summarize the text into facts with GPT and save the facts under ./output/summaries
+  - *Note*, I've abstracted over all my LLMs through a webserver that sits on my machine and serves under `http://localhost:3000/conversation`, I haven't had time to swap this out with openAPI & a key set. See processWebpage.ts
+- Takes all of those facts, and requests a dialogue to be created about it thorugh the same `http://localhost:3000/conversation` API.
 
-I take the output of this, and feed it into tortoise-tts to generate a podcast. It's how https://scribepod.substack.com/ is generated.
-
-# how 2 run
-Apologies, put this up quick. If you want to run this, you'll need to replace the localhost/3000 with a GPT inference API of your own. I run one on my own machine for a bunch of stuff that uses it.
-
-To run;
+To run this script
 ```
 npm install
 npm run start
 ```
 
-If you want to add your own paper, download all of the tex files and drop it under `./papers`
+# Scribepod - Podcast Audio Generator
+I started using play.ht. Those scripts aren't really cleaned up. You can try tot figure it out though! Check out `playht.ts` & `downloadConversation.ts`.
+
+### What sort of maitenance can I expect?
+Not a lot :( I am very busy these days (procastinating on twitter at https://twitter.com/yacineMTB)
+
+### Buy me an avacado toast (donate link)
+[support scribepod with stripe](https://buy.stripe.com/dR6eWGaK41MX2YgaEF)
 
