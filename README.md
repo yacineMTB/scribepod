@@ -6,7 +6,7 @@ These are my scripts that
   - You can add your own files under those subdirectories!
 - Summarize the text into facts with GPT and save the facts under ./output/summaries
   - *Note*, I've abstracted over all my LLMs through a webserver that sits on my machine and serves under `http://localhost:3000/conversation`, I haven't had time to swap this out with openAPI & a key set. See processWebpage.ts
-- Takes all of those facts, and requests a dialogue to be created about it thorugh the same `http://localhost:3000/conversation` API.
+- Takes all of those facts, and requests a dialogue to be created about it through the same `http://localhost:3000/conversation` API.
 
 To run this script
 ```
