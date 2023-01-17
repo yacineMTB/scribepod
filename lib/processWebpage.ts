@@ -1,9 +1,12 @@
 #!/usr/bin/env zx
-import fs from 'fs';
-import got from 'got'
+import * as fs from 'fs';
 import 'zx/globals';
-import { v4 as uuidv4 } from 'uuid'
 import { JSDOM } from 'jsdom';
+import { Configuration, OpenAIApi } from "openai";
+
+const openai = new OpenAIApi(new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+}));
 
 export interface WebsiteData {
   [webpage: string]: string[];
@@ -23,7 +26,6 @@ export interface ChatResponse {
 }
 
 const FOLDER_PATH = './websites';
-const PROMPT_URL = 'http://localhost:3000/conversation';
 const SUMMARIZE_PROMPT = `
 Turn facts from the following section as a bullet list, retaining as much specific details as you can. For example
 - Fact 1 about the information
@@ -36,13 +38,13 @@ const FIRST_PODCAST_PROMPT = `
   - Use "Alice:" and "Bob:" to indicate who is speaking. 
   - Make the dialogue about this as long as possible.
   - Alice is presenting the information, Bob is asking very intelligent questions that help Alice elaborate the facts.
-  Here's some of the facts from the paper. but do not end the conversation! I still have more facts I want to include in the dialgoue!
+  Here are some facts from the paper. but do not end the conversation! I still have more facts I want to include in the dialogue!
 `;
 const MIDDLE_PODCAST_PROMPT = `
  Continue the same podcast conversation with this next set of facts. Remember:
   - Make the dialogue about this as long as possible.
   - Alice is presenting the information, Bob is asking very intelligent questions that help Alice elaborate the facts.
-  Here's some more facts. Do not end the conversation! I still have more facts I want to include in the dialgoue!
+  Here's some more facts. Do not end the conversation! I still have more facts I want to include in the dialogue!
 `;
 const LAST_PODCAST_PROMPT = `
  Continue this same podcast conversation. Remember;
@@ -97,27 +99,37 @@ export const splitPageIntoSections = (lines: string[], wordCountGoal: number): s
   return mergedLines;
 }
 
-export const promptGPT = async (text: string, title: string, oneshotPrompt: string, conversationId?: string, parentMessageId?: string): Promise<ChatResponse> => {
+export const promptGPT = async (text: string, title: string, oneshotPrompt: string, conversationId?: string, parentMessageId?: string, maxTokens: number = 250): Promise<ChatResponse> => {
   const prompt = `
     ${oneshotPrompt} 
     Title of topic: ${title}
     ${text}
   `;
-  const { body } = await got.post(PROMPT_URL, {
-    json: {
-      prompt,
-      conversationId,
-      parentMessageId,
-    }
+  console.log('Prompt for GPT:')
+  console.log(prompt)
+  console.log('')
+  const completion = await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: prompt,
+    temperature: 0.6,
+    max_tokens: maxTokens
   });
-  const chatResponse: ChatResponse = JSON.parse(body);
-  console.log(chatResponse);
-  return chatResponse;
+  console.log('completion:', completion)
+  console.log('completion.data:', completion.data)
+  return {
+      response: completion.data.choices[0].text,
+      conversationId: conversationId,
+      messageId: completion.data.id,
+  }
 }
 
 export const generateSummary = async (websiteData: WebsiteData, writeToDisk: boolean = true): Promise<WebsiteSummary> => {
-  const summarizedSites: WebsiteSummary = JSON.parse(fs.readFileSync(`./output/summaries.json`, 'utf8'));;
-  // read sumaries json, avaoid reprocessing the same sites
+  const path = "./output/summaries.json" 
+  if (fs.existsSync(path)) {
+      return JSON.parse(fs.readFileSync(path, 'utf8'));
+  }
+  const summarizedSites: WebsiteSummary = {};
+  // read summaries json, avoid reprocessing the same sites
   for (const [webpage, lines] of Object.entries(websiteData)) {
     let conversationID;
     let parentMessageID;
@@ -133,7 +145,7 @@ export const generateSummary = async (websiteData: WebsiteData, writeToDisk: boo
         const points = gptResponse.split('\n').map((line) => line.trim()).filter((line) => line !== '');
         summarizedSites[webpage] = [...(summarizedSites[webpage] || []), ...points];
         if (writeToDisk) {
-          fs.writeFileSync(`./output/summaries.json`, JSON.stringify(summarizedSites, null, 2));
+          fs.writeFileSync(path, JSON.stringify(summarizedSites, null, 2));
         }
       } catch (e) {
         console.log(e);
@@ -163,7 +175,11 @@ export const generateDiscussion = async (
   writeToDisk: boolean = true,
   splitsOnFacts: number = 7
 ): Promise<Discussion> => {
-  const discussions: Discussion = JSON.parse(fs.readFileSync(`./output/discussions.json`, 'utf8'));
+  const path = "./output/discussions.json"
+  if (fs.existsSync(path)) {
+      return JSON.parse(fs.readFileSync(path, 'utf8'));
+  }
+  let discussions = {};
   let conversationID;
   let parentMessageID;
   for (const [title, summary] of Object.entries(summaries)) {
@@ -186,7 +202,7 @@ export const generateDiscussion = async (
         const speech = gptResponse.split('\n').map((line) => line.trim()).filter((line) => line !== '');
         discussions[title] = [...(discussions[title] || []), ...speech];
         if (writeToDisk) {
-          fs.writeFileSync(`./output/discussions.json`, JSON.stringify(discussions, null, 2));
+          fs.writeFileSync(path, JSON.stringify(discussions, null, 2));
         }
 
       } catch (e) {
