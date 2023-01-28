@@ -8,10 +8,10 @@ const soundClips: any = document.querySelector('.sound-clips') || {};
 const canvas: any = document.querySelector('.visualizer') || {};
 const mainSection: any = document.querySelector('.main-controls') || {};
 
-const INTERVAL = 5000;
-const TARGET_MAX_INFERENCE = 20000;
+const INTERVAL = 4000;
+const FLUSH = 5;
 
-let currentText: string[][] = [[]];
+let transcribedTextState = [''];
 
 stop.disabled = true;
 let audioCtx: any;
@@ -80,7 +80,6 @@ const postAudioData = async (blob: Blob): Promise<string> => {
   if (response.status === 200) {
     responseText = await response.text();
   }
-  console.log(responseText);
   return responseText;
 }
 
@@ -95,7 +94,6 @@ const generateClipElement = (blob: Blob) => {
   audio.src = audioURL;
   clipContainer.appendChild(audio);
   soundClips.appendChild(clipContainer);
-  console.log(clipContainer)
 }
 
 const main = async () => {
@@ -109,25 +107,39 @@ const main = async () => {
   mediaRecorder.ondataavailable = async (e) => {
     const currentBlob = e.data;
     console.log(currentBlob);
-    if (currentBlob.size > 0) {
-      chunks.push(currentBlob);
+    // Greater than some minimum size where there is no speech at all
+    console.log(currentBlob.size)
+    chunks.push(currentBlob);
+    if (currentBlob.size > 5000) {
       const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
       generateClipElement(blob);
       const transcribedText = await postAudioData(blob);
-      if (chunks.length > TARGET_MAX_INFERENCE / INTERVAL) {
+      console.log(chunks.length);
+      if (chunks.length >= FLUSH) {
         chunks = [];
-        currentText = [...currentText, [transcribedText]];
-        mediaRecorder.stop();
-        mediaRecorder.start();
+        transcribedTextState[transcribedTextState.length - 1] = transcribedText;
+        transcribedTextState.push('');
       } else {
-        // add the transcription to the chunk at the end of the array
-        const currentCurrentText = currentText[currentText.length - 1]
-        currentCurrentText.push(transcribedText)
+        transcribedTextState[transcribedTextState.length - 1] = transcribedText;
       }
+      console.log(transcribedTextState);
     }
   }
-  mediaRecorder.start(INTERVAL);
-  mediaRecorder.requestData();
+
+  mediaRecorder.start();
+  const clip = () => {
+    console.log('hi');
+    mediaRecorder.stop();
+  }
+  // call clip every 5 seconds
+  setInterval(clip, INTERVAL);
+
+  mediaRecorder.onstop = (e) => {
+    console.log('stopped! Starting again');
+    mediaRecorder.start();
+  };
+
+
 }
 
 window.onresize = function () {
