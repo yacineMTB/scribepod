@@ -2,24 +2,19 @@
 // This code is bad on purpose
 import './index.css'; // TODO: Actually make this a sane typescrcipt babel setup
 
-const record: any = document.querySelector('.record') || {};
-const stop: any = document.querySelector('.stop') || {};
 const soundClips: any = document.querySelector('.sound-clips') || {};
 const canvas: any = document.querySelector('.visualizer') || {};
 const mainSection: any = document.querySelector('.main-controls') || {};
+const transcription: any = document.querySelector('.transcription') || {};
 
 const INTERVAL = 1000;
 const FLUSH = 20;
 
 let transcribedTextState = [''];
 
-stop.disabled = true;
 let audioCtx: any;
 const canvasCtx = canvas.getContext("2d");
 
-record.style.background = "red";
-stop.disabled = false;
-record.disabled = true;
 
 function visualize(stream: any) {
   if (!audioCtx) {
@@ -83,6 +78,9 @@ const postAudioData = async (blob: Blob): Promise<string> => {
   return responseText;
 }
 
+const updateTranscription = (transcribedText: string[]) => {
+  transcription.innerHTML = transcribedText.join(' ');
+}
 
 const generateClipElement = (blob: Blob) => {
   const audioURL = window.URL.createObjectURL(blob);
@@ -118,12 +116,13 @@ const main = async () => {
         chunks = [];
         transcribedTextState[transcribedTextState.length - 1] = transcribedText;
         console.log('TRANSCRIPTION: ' + transcribedText )
-        generateClipElement(blob);
+        // generateClipElement(blob);
         transcribedTextState.push('');
       } else {
         transcribedTextState[transcribedTextState.length - 1] = transcribedText;
       }
       console.log(transcribedText);
+      updateTranscription(transcribedTextState);
     }
   }
 
