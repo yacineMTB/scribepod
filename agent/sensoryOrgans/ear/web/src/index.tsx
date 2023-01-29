@@ -8,8 +8,8 @@ const soundClips: any = document.querySelector('.sound-clips') || {};
 const canvas: any = document.querySelector('.visualizer') || {};
 const mainSection: any = document.querySelector('.main-controls') || {};
 
-const INTERVAL = 4000;
-const FLUSH = 5;
+const INTERVAL = 1000;
+const FLUSH = 20;
 
 let transcribedTextState = [''];
 
@@ -104,40 +104,37 @@ const main = async () => {
   const mediaRecorder = new MediaRecorder(stream);
   visualize(stream);
 
+  let semaphore = true;
+
   mediaRecorder.ondataavailable = async (e) => {
     const currentBlob = e.data;
-    console.log(currentBlob);
-    // Greater than some minimum size where there is no speech at all
-    console.log(currentBlob.size)
     chunks.push(currentBlob);
-    if (currentBlob.size > 5000) {
+    if (currentBlob.size > 5000 && semaphore) { // bug
       const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
-      generateClipElement(blob);
+      semaphore = false;
       const transcribedText = await postAudioData(blob);
-      console.log(chunks.length);
+      semaphore = true;
       if (chunks.length >= FLUSH) {
         chunks = [];
         transcribedTextState[transcribedTextState.length - 1] = transcribedText;
+        console.log('TRANSCRIPTION: ' + transcribedText )
+        generateClipElement(blob);
         transcribedTextState.push('');
       } else {
         transcribedTextState[transcribedTextState.length - 1] = transcribedText;
       }
-      console.log(transcribedTextState);
+      console.log(transcribedText);
     }
   }
 
   mediaRecorder.start();
   const clip = () => {
-    console.log('hi');
     mediaRecorder.stop();
   }
-  // call clip every 5 seconds
-  setInterval(clip, INTERVAL);
-
   mediaRecorder.onstop = (e) => {
-    console.log('stopped! Starting again');
     mediaRecorder.start();
   };
+  setInterval(clip, INTERVAL);
 
 
 }
