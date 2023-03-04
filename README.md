@@ -1,6 +1,15 @@
 ![generated with stable diffusion](https://github.com/yacineMTB/scribepod/blob/master/upscaledrobot.png?raw=true)
 
-# Scribepod - Podcast Generator
+# Scribepod, after https://github.com/yacineMTB/scribepod/pull/7
+
+This is a half baked project. I'm building an AI conversational agent, accessible through a webpage. Hey, it might work!
+My scribepod code is under ./scribepod
+
+
+# Important note about code quality
+It'll get better! I _promise_
+
+# Scribepod - Podcast Generator, before https://github.com/yacineMTB/scribepod/pull/7
 These are my scripts that
 - Page through papers (`./paper/<paper_name>/*.tex`) & websites (`./websites/<webpage_name>.*html`) 
   - You can add your own files under those subdirectories!
