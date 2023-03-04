@@ -5,6 +5,14 @@
 This is a half baked project. I'm building an AI conversational agent, accessible through a webpage. Hey, it might work!
 My scribepod code is under ./scribepod
 
+Want to run it?
+
+```
+npm install && npm run start-reason-dev                                                                      
+python python agent/whisper/app.py (after installing deps, figure it out)
+cd ./agent/ear && npm run install & npm run start
+```
+Not guaranteed to work!
 
 # Important note about code quality
 It'll get better! I _promise_
