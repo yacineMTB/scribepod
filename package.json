@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npx tsx ./scribepod.ts "
+    "start": "npx tsx ./scribepod.ts",
+    "start-reason-dev": "nodemon --watch 'reason/**' --ext 'ts,json' --exec npm run start-reason",
+    "start-reason": "npx tsx ./reason/server.ts"
   },
   "repository": {
     "type": "git",
@@ -16,9 +18,19 @@
   },
   "homepage": "https://github.com/yacineMTB/AgentGraph#readme",
   "dependencies": {
+    "axios": "^1.2.6",
+    "cors": "^2.8.5",
+    "cors-express": "^0.2.2",
     "dotenv-safe": "^8.2.0",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-http-proxy": "^1.6.3",
     "got": "^12.5.3",
     "jsdom": "^20.0.3",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.0",
+    "nodemon": "^2.0.20",
+    "openai": "^3.2.1",
     "typescript": "^4.9.3",
     "uuid": "^9.0.0",
     "zx": "^7.1.1"
